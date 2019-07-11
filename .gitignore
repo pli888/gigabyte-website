@@ -1,0 +1,14 @@
+.idea
+
+.terraform
+terraform.tfstate*
+vault
+staging-playbook.retry
+
+# PhpStorm
+*.iml
+*.iws
+.idea/
+
+# MacOSX
+.DS_Store
