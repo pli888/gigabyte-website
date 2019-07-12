@@ -19,5 +19,9 @@
 
   roles:
   - role: ansible-role-apache
+    apache_remove_default_vhost: true
+    apache_create_vhosts: true
+    apache_vhosts_filename: "vhosts.conf"
     apache_vhosts:
-    - {servername: "gigabytejournal.com", documentroot: "/var/www/vhosts/gigabytejournal_com"}
+    - {servername: "gigabytejournal.com", documentroot: "/var/www/gigabytejournal.com"}
+  - role: landing-install

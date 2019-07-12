@@ -1,0 +1,31 @@
+- name: Create gigabyte web directory
+  file:
+    path: /var/www/gigabytejournal.com/
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0775
+
+- name: Copy landing website html file
+  copy:
+    src: ../../html/index.html
+    dest: /var/www/gigabytejournal.com
+    owner: www-data
+    group: www-data
+    mode: 0775
+
+- name: Copy landing website css files
+  copy:
+    src: ../../css
+    dest: /var/www/gigabytejournal.com
+    owner: www-data
+    group: www-data
+    mode: 0775
+
+- name: Copy landing website image files
+  copy:
+    src: ../../images
+    dest: /var/www/gigabytejournal.com
+    owner: www-data
+    group: www-data
+    mode: 0775
