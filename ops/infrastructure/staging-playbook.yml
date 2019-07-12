@@ -21,3 +21,4 @@
   - role: ansible-role-apache
     apache_vhosts:
     - {servername: "gigabytejournal.com", documentroot: "/var/www/vhosts/gigabytejournal_com"}
+  - role: landing-install

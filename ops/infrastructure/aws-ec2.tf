@@ -6,8 +6,11 @@ provider "aws" {
 
 resource "aws_security_group" "landing_host" {
   name        = "landing_host"
-  description = "Allow connection to landing host"
+  description = "Allow connection to ec2-as1-landing-gigabyte"
   vpc_id      = "${var.aws_vpc_id}"
+  tags = {
+    Name = "sg-as1-landing-gigabyte"
+  }
 
   ingress {
     from_port   = 80
@@ -37,7 +40,6 @@ resource "aws_security_group" "landing_host" {
 	cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 
 resource "aws_instance" "landing_host" {
   # Deploy Ubuntu 18.04 LTS
