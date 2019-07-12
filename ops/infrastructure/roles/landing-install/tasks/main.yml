@@ -29,25 +29,3 @@
     owner: www-data
     group: www-data
     mode: 0775
-
-- name: Add Apache config for gigabytejournal.com
-  copy:
-    src: ../../ops/configuration/apache-conf/gigabytejournal.com.conf
-    dest: /etc/apache2/sites-available
-    owner: www-data
-    group: www-data
-    mode: 0775
-
-- name: Enable gigabytejournal.com Apache configuration
-  command: sudo a2ensite /etc/apache2/sites-available/gigabytejournal.com.conf
-  ignore_errors: true
-
-- name: Disable default site defined in 000-default.conf
-  command: sudo a2dissite /etc/apache2/sites-available/000-default.conf
-  ignore_errors: true
-
-- name: Restart apache2
-  command: sudo systemctl restart apache2
-  ignore_errors: true
-
-
